@@ -23,7 +23,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "Open Sans";
+    font-family: "Open Sans", serif;
 }
 
 h1, h2, p, a {
@@ -31,7 +31,8 @@ h1, h2, p, a {
 }
 
 .container {
-    max-width: 85%;
+    width: 85%;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -48,6 +49,7 @@ nav {
     width: 40%;
     display: flex;
     justify-content: space-between;
+    margin-left: 20px;
 }
 
 .logo {
@@ -58,6 +60,14 @@ nav {
 
 .nav li {
     display: inline-block;
+}
+
+.nav li:not(:nth-child(1)) {
+    margin-left: 10px;
+}
+
+.tel {
+    margin-left: 20px;
 }
 
 .nav a, .tel {
@@ -152,10 +162,10 @@ main {
 
 footer {
     background: linear-gradient(180deg, #33008D 0%, #150433 100%);
-    padding: 82px 0 83px;
 }
 
 .down {
+    padding: 82px 0 83px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -174,4 +184,100 @@ footer {
     font-size: 12px;
     line-height: 163.35%;
     color: #FCFCFC;
+}
+
+@media (max-width: 1000px) {
+    nav, .down {
+        padding: 1vh 0;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tel {
+        order: 2;
+    }
+
+    .pic {
+        padding: 5% 0;
+        background-image: url("../images/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .pic > div {
+        text-align: center;
+    }
+
+    .pic h1 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    .pic p {
+        display: none;
+    }
+
+    .ask p {
+        font-size: 16px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .border {
+        min-width: 300px;
+    }
+
+    .border:nth-child(1) {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 435px) {
+    .nav {
+        order: 2;
+    }
+
+    .tel {
+        order: 3;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    main {
+        padding: 5px 0;
+    }
+
+    .ask {
+        display: none;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .border {
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    .border:nth-child(1) {
+        margin-right: 0;
+    }
+
 }
